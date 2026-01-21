@@ -1,7 +1,19 @@
 ---
-name: beads-task-management
-description: Manages tasks with first-class dependency support using the bd (beads) CLI. Use when tracking work items, creating tasks with dependencies, finding ready work, managing priorities (P0-P4), organizing with labels, or visualizing task graphs. Triggers on task management, issue tracking, dependency chains, or mentions of bd/beads.
+name: beads
+description: Manages tasks with first-class dependency support using the bd (beads) CLI. Use when tracking work items, creating tasks with dependencies, finding ready work, managing priorities (P0-P4), organizing with labels, or visualizing task graphs.
 ---
+
+<auto_trigger>
+- "bd", "beads", "task", "tasks"
+- "create task", "new task", "add task"
+- "close task", "complete task", "done with"
+- "what's ready", "ready to work", "unblocked"
+- "dependency", "dependencies", "blocks", "blocked by"
+- "priority", "p0", "p1", "p2"
+- Creating tasks
+- Finding ready work
+- Managing dependencies
+</auto_trigger>
 
 # Beads (bd) Task Management
 

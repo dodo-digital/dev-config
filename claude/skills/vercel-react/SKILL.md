@@ -1,7 +1,20 @@
 ---
 name: vercel-react
-description: React and Next.js best practices from Vercel Engineering (40+ optimization rules)
+description: React and Next.js best practices from Vercel Engineering (40+ optimization rules). Use when writing React components, Next.js pages, reviewing frontend code, or optimizing bundle size and performance.
 ---
+
+<auto_trigger>
+- "react", "nextjs", "next.js", "next js"
+- "component", "components", "jsx", "tsx"
+- "server component", "client component", "use client", "use server"
+- "suspense", "streaming", "ssr", "server side"
+- "bundle size", "tree shaking", "code splitting"
+- "waterfall", "parallel fetch", "promise.all"
+- "barrel import", "barrel file"
+- Writing React code
+- Reviewing frontend performance
+- Optimizing Next.js app
+</auto_trigger>
 
 <objective>
 Apply Vercel's React and Next.js performance best practices when writing, reviewing, or refactoring code. This skill encapsulates 10+ years of optimization knowledge into actionable rules.

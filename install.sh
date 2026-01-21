@@ -98,6 +98,12 @@ cp -f "$SCRIPT_DIR/claude/hooks/on-file-write.sh" "$CLAUDE_DIR/hooks/"
 chmod +x "$CLAUDE_DIR/hooks/on-file-write.sh"
 success "on-file-write.sh (UBS hook) installed"
 
+# Skill Router (auto-activates skills based on context)
+mkdir -p "$CLAUDE_DIR/hooks/skill-router"
+cp -f "$SCRIPT_DIR/claude/hooks/skill-router/"*.{sh,py} "$CLAUDE_DIR/hooks/skill-router/" 2>/dev/null || true
+chmod +x "$CLAUDE_DIR/hooks/skill-router/"*.sh "$CLAUDE_DIR/hooks/skill-router/"*.py 2>/dev/null || true
+success "skill-router hook installed"
+
 # ============================================
 # 3. Install Skills
 # ============================================
@@ -107,7 +113,7 @@ echo "--- Installing Skills ---"
 # Install custom skills from this repo
 if [ -d "$SCRIPT_DIR/claude/skills" ] && [ "$(ls -A "$SCRIPT_DIR/claude/skills" 2>/dev/null)" ]; then
     cp -rf "$SCRIPT_DIR/claude/skills/"* "$CLAUDE_DIR/skills/" 2>/dev/null || true
-    success "Custom skills installed (vercel-ai-browser, vercel-react)"
+    success "Custom skills installed (oracle, cass, memory, beads, beads-viewer, vercel-react, vercel-ai-browser)"
 else
     warn "No custom skills to install"
 fi

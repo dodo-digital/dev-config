@@ -1,7 +1,20 @@
 ---
 name: vercel-ai-browser
-description: Browser automation with Vercel AI SDK patterns using Playwright MCP
+description: Browser automation with Vercel AI SDK patterns using Playwright MCP. Use when testing web apps, taking screenshots, scraping content, or automating browser interactions.
 ---
+
+<auto_trigger>
+- "browser", "playwright", "e2e", "end to end"
+- "screenshot", "take screenshot", "capture page"
+- "click button", "fill form", "type text"
+- "test the app", "test this page", "check the site"
+- "scrape", "scraping", "extract content"
+- "visual test", "visual regression"
+- "browser automation", "automate browser"
+- Testing Next.js app in browser
+- Taking screenshots of pages
+- Automating form submissions
+</auto_trigger>
 
 <objective>
 Provide intelligent browser automation for testing, scraping, and interaction using Playwright MCP tools with Vercel AI SDK best practices. This skill helps you control browsers through natural language while following modern React/Next.js testing patterns.

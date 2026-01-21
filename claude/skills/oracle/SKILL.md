@@ -1,3 +1,19 @@
+---
+name: oracle
+description: Consult GPT-5 Pro, Gemini 3 Pro, or Claude with full file context when stuck on hard problems. Use when debugging fails after 2-3 attempts, need architecture validation, or want cross-model verification.
+---
+
+<auto_trigger>
+- "stuck", "can't figure out", "not working"
+- "second opinion", "another model", "ask gpt", "ask gemini"
+- "oracle", "consult", "verify with"
+- "architecture review", "design validation"
+- "debugging for hours", "tried everything"
+- Stuck after multiple attempts
+- Need cross-model verification
+- Complex architectural decisions
+</auto_trigger>
+
 # Oracle CLI
 
 > Bundle prompts with file context to consult GPT-5 Pro, Gemini 3 Pro, or Claude for hard problems.

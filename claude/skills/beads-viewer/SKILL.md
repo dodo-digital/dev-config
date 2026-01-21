@@ -1,7 +1,18 @@
 ---
 name: beads-viewer
-description: AI-powered task prioritization using PageRank and graph analysis with bv. Use when deciding what to work on next, analyzing project bottlenecks, understanding task dependencies, or getting AI-powered work recommendations. Triggers on "what should I work on", "prioritize tasks", "bv", "triage", or dependency analysis requests.
+description: AI-powered task prioritization using PageRank and graph analysis with bv. Use when deciding what to work on next, analyzing project bottlenecks, understanding task dependencies, or getting AI-powered work recommendations.
 ---
+
+<auto_trigger>
+- "bv", "beads viewer", "triage"
+- "what should I work on", "what's next", "prioritize"
+- "bottleneck", "bottlenecks", "high impact"
+- "pagerank", "graph analysis", "dependency graph"
+- "robot-triage", "robot triage"
+- Deciding what to work on
+- Finding highest impact tasks
+- Analyzing task dependencies
+</auto_trigger>
 
 # Beads Viewer (bv)
 

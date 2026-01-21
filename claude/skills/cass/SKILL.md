@@ -3,6 +3,17 @@ name: cass
 description: Search and explore coding agent session histories using CASS (Coding Agent Session Search). Use when searching past sessions, finding similar work, retrieving context from previous conversations, or checking index health.
 ---
 
+<auto_trigger>
+- "cass", "session search", "past sessions"
+- "have I done this before", "similar work"
+- "search history", "find where", "when did I"
+- "index sessions", "session health"
+- "previous conversation", "last time"
+- Searching for past work
+- Finding similar implementations
+- Checking session history
+</auto_trigger>
+
 # CASS - Coding Agent Session Search
 
 Unified search over coding agent histories (Claude Code, Codex, Gemini, Cline, Cursor, and more).
