@@ -56,7 +56,7 @@ bd dep add BEAD-B --blocked-by BEAD-A     # Add dependency
 
 `bv --robot-triage` uses PageRank to recommend highest-impact work.
 
-## Memory System (Cast Memory)
+## Memory System
 
 Builds a playbook of rules learned from coding sessions.
 

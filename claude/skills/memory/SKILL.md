@@ -1,9 +1,9 @@
 ---
-name: cast-memory
+name: memory
 description: Procedural memory system for AI coding agents using the `cm` CLI tool. Use when starting any coding task to get relevant context, when learning patterns from past sessions, when adding rules to the playbook, or when the user mentions memory, context, playbook, or learning from history.
 ---
 
-# Cast Memory (cm)
+# Memory (cm)
 
 Procedural memory system that helps agents learn from past sessions and apply accumulated knowledge to new tasks.
 
