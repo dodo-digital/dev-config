@@ -4,14 +4,17 @@ description: Consult GPT-5 Pro, Gemini 3 Pro, or Claude with full file context w
 ---
 
 <auto_trigger>
-- "stuck", "can't figure out", "not working"
-- "second opinion", "another model", "ask gpt", "ask gemini"
-- "oracle", "consult", "verify with"
-- "architecture review", "design validation"
-- "debugging for hours", "tried everything"
-- Stuck after multiple attempts
-- Need cross-model verification
-- Complex architectural decisions
+Human phrases:
+- "I'm stuck", "I can't figure this out", "this isn't working"
+- "I've tried everything", "nothing is working"
+- "can you ask GPT", "what would GPT say", "get another opinion"
+- "I need help with this", "I'm lost here"
+- "this is really hard", "I don't know what's wrong"
+- "been debugging for hours", "spent all day on this"
+- "is this the right approach", "am I doing this right"
+
+Keep for explicit mentions:
+- "oracle", "gpt-5", "gemini"
 </auto_trigger>
 
 # Oracle CLI

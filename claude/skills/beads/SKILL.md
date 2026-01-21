@@ -4,15 +4,17 @@ description: Manages tasks with first-class dependency support using the bd (bea
 ---
 
 <auto_trigger>
-- "bd", "beads", "task", "tasks"
-- "create task", "new task", "add task"
-- "close task", "complete task", "done with"
-- "what's ready", "ready to work", "unblocked"
-- "dependency", "dependencies", "blocks", "blocked by"
-- "priority", "p0", "p1", "p2"
-- Creating tasks
-- Finding ready work
-- Managing dependencies
+Human phrases:
+- "add a task", "create a task", "new todo"
+- "I need to do", "remind me to", "don't forget to"
+- "what's left", "what do I need to do", "what's remaining"
+- "I finished this", "done with this", "completed"
+- "this depends on", "can't do this until", "blocked by"
+- "what can I work on", "what's not blocked"
+- "high priority", "urgent", "do this first"
+
+Keep for explicit mentions:
+- "bd", "beads", "task"
 </auto_trigger>
 
 # Beads (bd) Task Management

@@ -4,14 +4,18 @@ description: Reviews UI code for Vercel Web Interface Guidelines compliance. Use
 ---
 
 <auto_trigger>
-Activate this skill when the user:
-- Asks to "review my UI", "check my UI", "audit my design"
-- Requests accessibility review or a11y check
-- Wants UX audit or usability review
-- Asks to check against best practices
-- Mentions "Web Interface Guidelines" or "Vercel guidelines"
-- Asks for design/component review on React/Next.js files
-- Requests focus state, animation, or form accessibility checks
+Human phrases:
+- "review my UI", "check my design", "look at this page"
+- "is this accessible", "can blind users use this"
+- "does this look right", "is this good UX"
+- "check this component", "review this form"
+- "is the contrast okay", "can you read this"
+- "does the focus work", "keyboard navigation"
+- "is this mobile friendly", "does it work on phone"
+- "audit this", "check against best practices"
+
+Keep for explicit mentions:
+- "accessibility", "a11y", "UX", "design review"
 </auto_trigger>
 
 # Web Interface Guidelines

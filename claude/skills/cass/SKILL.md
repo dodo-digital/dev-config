@@ -4,14 +4,16 @@ description: Search and explore coding agent session histories using CASS (Codin
 ---
 
 <auto_trigger>
-- "cass", "session search", "past sessions"
-- "have I done this before", "similar work"
-- "search history", "find where", "when did I"
-- "index sessions", "session health"
-- "previous conversation", "last time"
-- Searching for past work
-- Finding similar implementations
-- Checking session history
+Human phrases:
+- "have I done this before", "did I solve this already"
+- "where did I do that", "find where I worked on"
+- "how did I fix this last time", "what did I do before"
+- "search my history", "look through past sessions"
+- "I remember doing this", "I've seen this before"
+- "find that conversation", "when did I work on this"
+
+Keep for explicit mentions:
+- "cass", "session search", "sessions"
 </auto_trigger>
 
 # CASS - Coding Agent Session Search

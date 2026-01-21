@@ -4,14 +4,16 @@ description: Procedural memory system for AI coding agents using the `cm` CLI to
 ---
 
 <auto_trigger>
-- "cm", "cast memory", "memory"
-- "context", "get context", "relevant rules"
-- "playbook", "add rule", "learned"
-- "reflect", "reflection", "extract learnings"
-- "what did I learn", "past sessions"
-- Starting a new task
-- Getting relevant context
-- Adding lessons learned
+Human phrases:
+- "what do I know about this", "have I done this before"
+- "what should I remember", "any tips for this"
+- "I learned something", "remember this for next time"
+- "add this to my notes", "save this lesson"
+- "what went wrong last time", "don't make that mistake again"
+- "start of session", "beginning work"
+
+Keep for explicit mentions:
+- "cm", "memory", "playbook", "context"
 </auto_trigger>
 
 # Memory (cm)

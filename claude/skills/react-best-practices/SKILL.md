@@ -8,19 +8,23 @@ description: Vercel Engineering's React and Next.js performance optimization gui
 Comprehensive performance optimization guide for React and Next.js applications from Vercel Engineering. Contains 40+ rules across 8 categories, prioritized by impact.
 
 <auto_trigger>
-- "react", "nextjs", "next.js", "next js"
-- "component", "components", "jsx", "tsx"
-- "server component", "client component", "use client", "use server"
-- "suspense", "streaming", "ssr", "server side rendering"
-- "bundle size", "tree shaking", "code splitting", "dynamic import"
-- "waterfall", "parallel fetch", "promise.all", "async"
-- "barrel import", "barrel file", "lucide", "mui"
-- "re-render", "rerender", "memo", "useMemo", "useCallback"
-- "hydration", "hydration mismatch"
-- Writing React code
-- Reviewing frontend performance
-- Optimizing Next.js app
-- Data fetching patterns
+Human phrases that should activate this skill:
+- "build a component", "create a component", "new component"
+- "add a page", "create a page", "new page"
+- "build the UI", "create the UI", "implement the frontend"
+- "why is it slow", "it's loading slow", "page is slow"
+- "make it faster", "speed this up", "optimize this"
+- "fetch the data", "load the data", "get the data"
+- "add a form", "create a form", "build a form"
+- "add a button", "handle the click"
+- "review this code" (when .tsx/.jsx files involved)
+
+File path triggers:
+- src/components/, app/, pages/
+- .tsx, .jsx, .ts files in frontend directories
+
+Keep basic keywords for explicit mentions:
+- "react", "nextjs", "next.js"
 </auto_trigger>
 
 ## Quick Reference

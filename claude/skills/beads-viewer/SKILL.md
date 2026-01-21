@@ -4,14 +4,16 @@ description: AI-powered task prioritization using PageRank and graph analysis wi
 ---
 
 <auto_trigger>
-- "bv", "beads viewer", "triage"
-- "what should I work on", "what's next", "prioritize"
-- "bottleneck", "bottlenecks", "high impact"
-- "pagerank", "graph analysis", "dependency graph"
-- "robot-triage", "robot triage"
-- Deciding what to work on
-- Finding highest impact tasks
-- Analyzing task dependencies
+Human phrases:
+- "what should I work on", "what's most important"
+- "what has the biggest impact", "where should I focus"
+- "what's blocking everything", "what unblocks the most"
+- "prioritize my tasks", "help me decide what to do"
+- "show me the bottlenecks", "what's holding things up"
+- "triage my work", "what's the best use of my time"
+
+Keep for explicit mentions:
+- "bv", "beads viewer", "triage", "prioritize"
 </auto_trigger>
 
 # Beads Viewer (bv)

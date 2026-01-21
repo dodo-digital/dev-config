@@ -4,17 +4,17 @@ description: CLI browser automation tool optimized for AI agents. Uses ref-based
 ---
 
 <auto_trigger>
-- "agent-browser", "browser automation", "automate browser"
-- "open url", "navigate to", "go to website"
-- "click button", "fill form", "type text", "submit form"
-- "take screenshot", "screenshot", "capture page"
-- "scrape", "scraping", "extract from page"
-- "e2e test", "end to end", "browser test"
-- "web automation", "headless browser"
-- Testing web applications
-- Filling forms automatically
-- Taking screenshots of pages
-- Browser interactions
+Human phrases:
+- "open the site", "go to the page", "check the website"
+- "click that button", "fill out the form", "submit it"
+- "take a screenshot", "show me what it looks like"
+- "test it in the browser", "see if it works"
+- "log in to the site", "sign up on the page"
+- "grab the data from the page", "get the text from"
+- "what does the page show", "check if it loaded"
+
+Keep for explicit mentions:
+- "agent-browser", "browser", "screenshot"
 </auto_trigger>
 
 # agent-browser
