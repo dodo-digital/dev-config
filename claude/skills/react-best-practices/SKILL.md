@@ -23,8 +23,8 @@ File path triggers:
 - src/components/, app/, pages/
 - .tsx, .jsx, .ts files in frontend directories
 
-Keep basic keywords for explicit mentions:
-- "react", "nextjs", "next.js"
+Keep for explicit mentions:
+- "react", "nextjs", "next.js", "react best practices"
 </auto_trigger>
 
 ## Quick Reference
