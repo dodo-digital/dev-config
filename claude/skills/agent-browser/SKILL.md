@@ -3,6 +3,20 @@ name: agent-browser
 description: CLI browser automation tool optimized for AI agents. Uses ref-based selectors (@e1, @e2) and accessibility tree snapshots for 93% less context than Playwright MCP. Use when automating browsers, testing web apps, filling forms, taking screenshots, scraping content, or any browser interaction task.
 ---
 
+<auto_trigger>
+- "agent-browser", "browser automation", "automate browser"
+- "open url", "navigate to", "go to website"
+- "click button", "fill form", "type text", "submit form"
+- "take screenshot", "screenshot", "capture page"
+- "scrape", "scraping", "extract from page"
+- "e2e test", "end to end", "browser test"
+- "web automation", "headless browser"
+- Testing web applications
+- Filling forms automatically
+- Taking screenshots of pages
+- Browser interactions
+</auto_trigger>
+
 # agent-browser
 
 A CLI tool for browser automation designed specifically for AI agents. Uses accessibility tree snapshots with element references for efficient, low-context browser control.
