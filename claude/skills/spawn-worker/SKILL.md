@@ -43,12 +43,21 @@ When the user wants to spawn a worker agent:
 
 2. **Choose the CLI tool:**
    - `claude` - Claude Code (default, recommended)
-   - `codex` - OpenAI Codex
+   - `codex` - OpenAI Codex (uses different syntax!)
 
 3. **Spawn the session:**
+
+**For Claude:**
 ```bash
 tmux new-session -d -s SESSION_NAME 'claude --dangerously-skip-permissions "PROMPT"'
 ```
+
+**For Codex:**
+```bash
+tmux new-session -d -s SESSION_NAME 'codex exec --dangerously-bypass-approvals-and-sandbox "PROMPT"'
+```
+
+> **Note:** Codex requires `exec` subcommand and uses `--dangerously-bypass-approvals-and-sandbox` (not `--dangerously-skip-permissions`)
 
 4. **Confirm to user** with attach command:
 ```
@@ -70,7 +79,7 @@ tmux new-session -d -s worker-api -c ~/Projects/myapp 'claude --dangerously-skip
 
 ### Codex worker
 ```bash
-tmux new-session -d -s codex1 'codex --dangerously-skip-permissions "Refactor the database layer"'
+tmux new-session -d -s codex1 'codex exec --dangerously-bypass-approvals-and-sandbox "Refactor the database layer"'
 ```
 
 ### Multiple workers in parallel
