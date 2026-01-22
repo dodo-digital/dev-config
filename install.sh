@@ -98,6 +98,10 @@ cp -f "$SCRIPT_DIR/claude/hooks/on-file-write.sh" "$CLAUDE_DIR/hooks/"
 chmod +x "$CLAUDE_DIR/hooks/on-file-write.sh"
 success "on-file-write.sh (UBS hook) installed"
 
+cp -f "$SCRIPT_DIR/claude/hooks/cass-index-on-exit.sh" "$CLAUDE_DIR/hooks/"
+chmod +x "$CLAUDE_DIR/hooks/cass-index-on-exit.sh"
+success "cass-index-on-exit.sh (SessionEnd hook) installed"
+
 # Skill Router (auto-activates skills based on context)
 mkdir -p "$CLAUDE_DIR/hooks/skill-router"
 cp -f "$SCRIPT_DIR/claude/hooks/skill-router/"*.{sh,py} "$CLAUDE_DIR/hooks/skill-router/" 2>/dev/null || true
@@ -138,7 +142,38 @@ if [ -d "$VERCEL_SKILLS_DIR/skills/react-best-practices" ]; then
 fi
 
 # ============================================
-# 4. Configure Settings
+# 4. Install Git Hooks (Global)
+# ============================================
+echo ""
+echo "--- Installing Global Git Hooks ---"
+
+mkdir -p "$HOME/.config/git/hooks"
+cp -f "$SCRIPT_DIR/git/hooks/pre-commit" "$HOME/.config/git/hooks/"
+chmod +x "$HOME/.config/git/hooks/pre-commit"
+git config --global core.hooksPath "$HOME/.config/git/hooks"
+success "Global pre-commit hook installed (UBS bug scanner)"
+
+# ============================================
+# 5. Install Crontab
+# ============================================
+echo ""
+echo "--- Installing Crontab ---"
+
+if [ -f "$SCRIPT_DIR/crontab.txt" ]; then
+    # Merge with existing crontab (avoid duplicates)
+    EXISTING=$(crontab -l 2>/dev/null || true)
+    while IFS= read -r line; do
+        if [[ -n "$line" && ! "$EXISTING" =~ "$line" ]]; then
+            (crontab -l 2>/dev/null; echo "$line") | crontab -
+            success "Added cron: ${line:0:50}..."
+        fi
+    done < "$SCRIPT_DIR/crontab.txt"
+else
+    warn "No crontab.txt found"
+fi
+
+# ============================================
+# 6. Configure Settings
 # ============================================
 echo ""
 echo "--- Configuring Settings ---"
@@ -154,7 +189,7 @@ else
 fi
 
 # ============================================
-# 5. Enable Plugins
+# 7. Enable Plugins
 # ============================================
 echo ""
 echo "--- Plugins ---"
