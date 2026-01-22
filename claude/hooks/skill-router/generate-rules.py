@@ -195,7 +195,9 @@ def parse_skill_file(skill_path: Path) -> dict | None:
 
 def generate_rules(project_dir: str) -> dict:
     """Generate complete skill-rules.json from project skills."""
-    skills_dir = Path(project_dir) / ".claude" / "skills"
+    # For global installation, use ~/.claude/skills/
+    home = Path.home()
+    skills_dir = home / ".claude" / "skills"
 
     rules = {
         "version": "2.0",

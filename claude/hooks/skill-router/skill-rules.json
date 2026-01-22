@@ -1,0 +1,185 @@
+{
+  "version": "2.0",
+  "generated": true,
+  "config": {
+    "minConfidenceScore": 3,
+    "maxSkillsToShow": 5,
+    "showMatchReasons": true
+  },
+  "scoring": {
+    "keyword": 2,
+    "keywordPattern": 3,
+    "pathPattern": 4,
+    "directoryMatch": 5,
+    "intentPattern": 4,
+    "contextPattern": 2,
+    "contentPattern": 3
+  },
+  "directoryMappings": {
+    ".claude/skills/ui-skills": "ui-skills",
+    ".claude/skills/cass-search": "cass-search",
+    ".claude/skills/cass-memory": "cass-memory",
+    ".claude/skills/spawn-worker": "spawn-worker"
+  },
+  "skills": {
+    "ui-skills": {
+      "description": "Opinionated constraints for building better interfaces with agents.",
+      "priority": 8,
+      "triggers": {
+        "keywords": [
+          "frontend",
+          "ui review",
+          "build interface",
+          "tailwind",
+          "build ui",
+          "accessibility",
+          "animation",
+          "constraints",
+          "create component",
+          "interfaces",
+          "react component",
+          "better",
+          "layout",
+          "building",
+          "opinionated",
+          "skills"
+        ],
+        "keywordPatterns": [],
+        "intentPatterns": [
+          "build\\ interface",
+          "create\\ component",
+          "build\\ ui"
+        ],
+        "pathPatterns": []
+      },
+      "excludePatterns": [],
+      "source": "auto_trigger"
+    },
+    "cass-search": {
+      "description": "Search past coding agent sessions for relevant context. Find previous solutions, code patterns, and discussions from Claude Code, Codex, Cursor, and other agent histories.",
+      "priority": 8,
+      "triggers": {
+        "keywords": [
+          "search sessions",
+          "coding",
+          "histories",
+          "solutions",
+          "how did we",
+          "search past",
+          "past sessions",
+          "search",
+          "cass",
+          "session history",
+          "patterns",
+          "find previous",
+          "sessions",
+          "cursor",
+          "cass search",
+          "previous",
+          "find in history",
+          "past",
+          "discussions",
+          "code",
+          "search history",
+          "when did we",
+          "claude",
+          "find",
+          "codex",
+          "relevant",
+          "context"
+        ],
+        "keywordPatterns": [],
+        "intentPatterns": [],
+        "pathPatterns": []
+      },
+      "excludePatterns": [],
+      "source": "auto_trigger"
+    },
+    "cass-memory": {
+      "description": "Cross-agent memory and learning system. Get context before starting tasks, extract lessons learned, manage playbook rules. Use when starting work, after completing tasks, or checking for patterns.",
+      "priority": 8,
+      "triggers": {
+        "keywords": [
+          "completing",
+          "cm context",
+          "get memory",
+          "learning",
+          "rules",
+          "cross",
+          "starting",
+          "extract lessons",
+          "lessons",
+          "extract",
+          "playbook",
+          "learned rules",
+          "relevant context",
+          "get context",
+          "work",
+          "cass",
+          "manage",
+          "what do we know",
+          "tasks",
+          "get",
+          "memory",
+          "patterns",
+          "before i start",
+          "system",
+          "past lessons",
+          "checking",
+          "learned",
+          "cm playbook",
+          "context"
+        ],
+        "keywordPatterns": [],
+        "intentPatterns": [],
+        "pathPatterns": []
+      },
+      "excludePatterns": [],
+      "source": "auto_trigger"
+    },
+    "spawn-worker": {
+      "description": "Spawn Claude Code or Codex agents in tmux sessions with specific prompts. Use when the user wants to run background agents, spawn workers, create parallel coding sessions, or delegate tasks to other Claude instances.",
+      "priority": 8,
+      "triggers": {
+        "keywords": [
+          "coding",
+          "spawn worker",
+          "parallel agent",
+          "parallel",
+          "spawn",
+          "delegate task",
+          "fire and forget",
+          "spawn agent",
+          "background agent",
+          "workers",
+          "run",
+          "instances",
+          "worker",
+          "tasks",
+          "spawn codex",
+          "tmux",
+          "run worker",
+          "sessions",
+          "delegate",
+          "user",
+          "prompts",
+          "start worker",
+          "code",
+          "specific",
+          "create",
+          "background",
+          "spawn claude",
+          "claude",
+          "tmux session",
+          "wants",
+          "codex"
+        ],
+        "keywordPatterns": [],
+        "intentPatterns": [],
+        "pathPatterns": []
+      },
+      "excludePatterns": [],
+      "source": "auto_trigger"
+    }
+  }
+}
