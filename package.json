@@ -1,0 +1,40 @@
+{
+  "name": "@dodo-digital/dev-config",
+  "version": "1.0.0",
+  "description": "Power-user Claude Code config with integrated tooling for agentic development",
+  "bin": {
+    "dev-config": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dodo-digital/dev-config.git"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai",
+    "config",
+    "dotfiles",
+    "developer-tools"
+  ],
+  "author": "Dodo Digital",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dodo-digital/dev-config/issues"
+  },
+  "homepage": "https://github.com/dodo-digital/dev-config#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "claude/",
+    "git/",
+    "scripts/",
+    "tools/",
+    "install.sh",
+    "crontab.txt",
+    "CLAUDE.md",
+    "README.md"
+  ]
+}
