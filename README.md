@@ -70,6 +70,27 @@ You don't run commands. Claude does.
 | **compound-engineering** | Multi-agent workflows, specialized reviewers |
 | **agent-pipelines** | Autonomous pipelines, task orchestration |
 
+## Directory Structure
+
+```
+dev-config/
+├── setup.sh                   # Curl-installable wrapper
+├── install.sh                 # Main installer
+├── crontab.txt                # Background jobs (templated)
+├── claude/
+│   ├── CLAUDE.md              # Agent instructions
+│   ├── hooks/
+│   │   ├── git_safety_guard.py
+│   │   ├── on-file-write.sh
+│   │   ├── cass-index-on-exit.sh
+│   │   └── skill-router/
+│   ├── skills/
+│   └── settings.template.json
+└── git/
+    └── hooks/
+        └── pre-commit         # Global git hook (UBS)
+```
+
 ## Install Options
 
 ```bash
