@@ -1,39 +1,50 @@
-# Dev Config
+# Dev Config Agent Instructions
 
-This project uses the dev-config toolset for agentic development workflows.
+You have access to enhanced tooling for agentic development. Follow these behaviors automatically.
 
-## Installed Tools
+## On Task Start
 
-| Tool | Purpose | Quick Reference |
-|------|---------|-----------------|
-| **ubs** | Static analysis for 7 languages | `ubs .` |
-| **bd** | Dependency-aware task management | `bd ready` |
-| **bv** | AI task prioritization (PageRank) | `bv --robot-triage` |
-| **cm** | Procedural memory for coding agents | `cm context "<task>" --json` |
-| **cass** | Search past coding sessions | `cass search "<query>" --json` |
-| **oracle** | Cross-model consultation | `oracle "<question>"` |
+Before beginning any non-trivial task, gather context:
+1. Run `cm context "<task description>" --json` to get relevant learned rules
+2. Run `cass search "<keywords>" --json --limit 5` to find similar past work
+3. Apply any relevant patterns or lessons from the results
 
-## Hooks Active
+## Task Management
 
-| Hook | Trigger | Action |
-|------|---------|--------|
-| `git_safety_guard.py` | Before Bash | Blocks dangerous git ops |
-| `on-file-write.sh` | After Write/Edit | Runs UBS static analysis |
-| `cass-index-on-exit.sh` | Session End | Indexes session for search |
-| `skill-router/` | Prompt Submit | Auto-suggests relevant skills |
+Use beads (`bd`) for tracking work with dependencies:
+- `bd q "task description"` — quick-create a task
+- `bd ready` — see unblocked tasks
+- `bd close BEAD-XXX` — mark complete
+- `bv --robot-triage` — get AI-prioritized recommendations
 
-## Starting Any Task
+When the user asks "what should I work on" or similar, run `bv --robot-triage`.
 
+## When Stuck
+
+If you've tried 2-3 approaches without success, consult another model:
 ```bash
-cm context "task description" --json   # Get relevant rules from memory
-cass search "keywords" --json          # Find similar past work
+oracle "your question"
+oracle -f src/ "question with file context"
 ```
 
-## Task Management (Beads)
+## On Session End
 
-```bash
-bd q "New task"                        # Quick create
-bd ready                               # What's unblocked
-bd close BEAD-XXX                      # Complete task
-bv --robot-triage                      # AI-prioritized recommendations
-```
+The `cass-index-on-exit.sh` hook automatically indexes your session. No action needed.
+
+## Active Hooks
+
+These run automatically:
+- **git_safety_guard.py** — blocks dangerous git ops (force push, hard reset)
+- **on-file-write.sh** — runs static analysis on file saves
+- **skill-router/** — suggests relevant skills based on prompts
+
+## Tool Reference
+
+| Tool | Purpose |
+|------|---------|
+| `cm` | Procedural memory — learned rules and patterns |
+| `cass` | Session search — find past solutions |
+| `bd` | Task management with dependencies |
+| `bv` | AI task prioritization (PageRank algorithm) |
+| `oracle` | Cross-model consultation (GPT-5, Gemini, etc.) |
+| `ubs` | Static analysis for 7 languages |

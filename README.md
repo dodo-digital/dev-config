@@ -1,174 +1,94 @@
 # Dev Config
 
-Batteries-included Claude Code setup for agentic development workflows. One command installs tools, hooks, skills, and configuration.
+Batteries-included Claude Code setup for agentic development. Install once, and Claude automatically uses enhanced tooling — memory, task management, session search, and more.
 
 ## Quick Start
+
+**Requirements:** Claude Code CLI, Node.js 18+, Python 3. Optional: Rust (for some tools).
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/dodo-digital/dev-config/main/setup.sh | bash
 ```
 
-With options:
-```bash
-# Skip crontab
-curl -fsSL https://raw.githubusercontent.com/dodo-digital/dev-config/main/setup.sh | bash -s -- --no-cron
+## After Install
 
-# Only install hooks
-curl -fsSL https://raw.githubusercontent.com/dodo-digital/dev-config/main/setup.sh | bash -s -- --hooks-only
+Run these once to complete setup:
+
+```bash
+# Enable plugins (multi-agent workflows, pipelines)
+claude plugins enable compound-engineering@every-marketplace
+claude plugins enable agent-pipelines@dodo-digital
+
+# Initialize memory system
+cm init
+
+# Index your existing sessions (optional)
+cass index
+
+# Set API key for cross-model consultation (optional)
+export OPENAI_API_KEY=sk-...
 ```
 
-Or clone manually:
-```bash
-git clone https://github.com/dodo-digital/dev-config.git ~/Projects/dev-config
-cd ~/Projects/dev-config
-./install.sh
-```
+## How It Works
 
-## What's Included
+Once installed, **Claude handles everything automatically**:
 
-### Tools (Binaries)
+- **Starting tasks** — Claude runs `cm context` and `cass search` to gather relevant patterns and past solutions
+- **Task management** — Claude uses `bd` (beads) to track work with dependencies
+- **When stuck** — Claude consults other models via `oracle` after 2-3 failed attempts
+- **Code quality** — Static analysis runs automatically on every file save
+- **Safety** — Dangerous git operations are blocked automatically
 
-| Tool | Purpose | Source |
+You don't run commands. Claude does.
+
+## What's Installed
+
+### Tools
+
+| Tool | Purpose |
+|------|---------|
+| **cm** | Procedural memory — learned rules and patterns |
+| **cass** | Session search — find past solutions |
+| **bd** | Task management with dependencies |
+| **bv** | AI task prioritization (PageRank) |
+| **oracle** | Cross-model consultation (GPT-5, Gemini) |
+| **ubs** | Static analysis for 7 languages |
+
+### Hooks (run automatically)
+
+| Hook | Trigger | Action |
 |------|---------|--------|
-| **ubs** | Static analysis for 7 languages | [ultimate_bug_scanner](https://github.com/Dicklesworthstone/ultimate_bug_scanner) |
-| **bv** | Task prioritization with PageRank | [beads_viewer](https://github.com/Dicklesworthstone/beads_viewer) |
-| **bd** | Dependency-aware task management | [beads](https://github.com/steveyegge/beads) |
-| **cm** | Procedural memory for coding agents | Cast Memory |
-| **cass** | Search past coding sessions | Agent Session Search |
-| **oracle** | Cross-model consultation (GPT-5 Pro, Gemini, etc.) | [steipete/oracle](https://github.com/steipete/oracle) |
-
-### Hooks
-
-| Hook | Trigger | Purpose |
-|------|---------|---------|
-| `git_safety_guard.py` | PreToolUse (Bash) | Blocks destructive git operations (force push, hard reset, etc.) |
-| `on-file-write.sh` | PostToolUse (Write/Edit) | Runs UBS static analysis on every file save |
-| `cass-index-on-exit.sh` | SessionEnd | Indexes your session for future search |
-| `skill-router/` | UserPromptSubmit | Auto-suggests relevant skills based on your prompt |
-
-### Skills
-
-**Included:**
-- `oracle` — Cross-model consultation when stuck
-- `memory` — Procedural memory system (get context, store learnings)
-- `cass` — Session search (find past solutions)
-- `beads` / `beads-viewer` — Task management and prioritization
-- `spawn-worker` — Spawn Claude/Codex agents in tmux sessions
-- `agent-browser` — Browser automation with Playwright
-- `react-best-practices` — React/Next.js performance guide (40+ rules)
-- `web-design-guidelines` — UI/UX design review
-- `ui-skills` — Interface building constraints
-
-**Auto-cloned by installer:**
-- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) — Official Vercel engineering skills
+| `git_safety_guard.py` | Before Bash | Blocks force push, hard reset, etc. |
+| `on-file-write.sh` | After file save | Runs static analysis |
+| `cass-index-on-exit.sh` | Session end | Indexes session for search |
+| `skill-router/` | Prompt submit | Suggests relevant skills |
 
 ### Plugins
 
 | Plugin | Purpose |
 |--------|---------|
-| **compound-engineering** | Multi-agent workflows, code reviewers, research agents |
-| **agent-pipelines** | Ralph loops, pipeline orchestration, beads integration |
+| **compound-engineering** | Multi-agent workflows, specialized reviewers |
+| **agent-pipelines** | Autonomous pipelines, task orchestration |
 
-## Selective Installation
+## Install Options
 
-Install everything (default):
 ```bash
-./install.sh
-```
+# Skip specific components
+curl ... | bash -s -- --no-cron
+curl ... | bash -s -- --no-tools
 
-Install only specific components:
-```bash
-./install.sh --tools-only      # Just CLI tools
-./install.sh --hooks-only      # Just Claude Code hooks
-./install.sh --skills-only     # Just Claude Code skills
-```
+# Install only specific components
+curl ... | bash -s -- --hooks-only
+curl ... | bash -s -- --tools-only
 
-Skip specific components:
-```bash
-./install.sh --no-cron         # Everything except crontab
-./install.sh --no-git-hooks    # Everything except global git hooks
-./install.sh --no-tools        # Hooks + skills + config only
-```
-
-See all options:
-```bash
+# See all options
 ./install.sh --help
 ```
 
-## Directory Structure
-
-```
-dev-config/
-├── install.sh                 # Main installer script
-├── README.md
-├── CLAUDE.md                  # Tool workflows & reference
-├── crontab.txt                # Background cron jobs (templated)
-├── claude/
-│   ├── CLAUDE.md              # Project-level Claude instructions
-│   ├── hooks/
-│   │   ├── git_safety_guard.py    # Prevent destructive git ops
-│   │   ├── on-file-write.sh       # UBS static analysis on save
-│   │   ├── cass-index-on-exit.sh  # Index sessions on exit
-│   │   └── skill-router/          # Auto-skill suggestion engine
-│   ├── skills/                    # Custom skills (10+)
-│   └── settings.template.json    # Claude Code settings (templated)
-└── git/
-    └── hooks/
-        └── pre-commit             # Global git pre-commit (UBS)
-```
-
-## How Templating Works
-
-Files use `__HOME__` as a placeholder for the user's home directory. The installer automatically resolves these at install time:
-
-- `settings.template.json` → `~/.claude/settings.json` (with `__HOME__` → `/home/you`)
-- `crontab.txt` → crontab entries (with `__HOME__` → `/home/you`)
-
-This means the repo is OS-agnostic — works on Linux (`/home/user`), macOS (`/Users/user`), or any other layout.
-
-## Requirements
-
-- **Claude Code CLI** installed
-- **Node.js 22+** (for oracle, cm)
-- **Rust** (for bd, cass) — optional, installer will warn if missing
-- **Python 3** (for bv, hooks)
-
-## Post-Install
-
+Or clone manually:
 ```bash
-# Enable plugins
-claude plugins enable compound-engineering@every-marketplace
-claude plugins enable agent-pipelines@dodo-digital
-
-# Set OpenAI key for oracle
-export OPENAI_API_KEY=sk-...
-
-# Initialize Cast Memory
-cm init
-
-# Index coding sessions
-cass index
-```
-
-## Key Workflows
-
-**Start every task with fresh context:**
-```bash
-cm context "your task description" --json
-cass search "keywords" --json --limit 5
-```
-
-**Manage work with dependency-aware tasks:**
-```bash
-bd q "New task"           # Quick create
-bd ready                  # What's unblocked
-bv --robot-triage         # AI-prioritized recommendations
-```
-
-**When stuck, consult another model:**
-```bash
-oracle "How should I structure this auth system?"
-oracle -f src/ -f docs/ "What's wrong with this approach?"
+git clone https://github.com/dodo-digital/dev-config.git
+cd dev-config && ./install.sh
 ```
 
 ## License
