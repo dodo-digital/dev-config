@@ -1,3 +1,8 @@
+# Dev Config - Cron Jobs
+# Paths are resolved by install.sh during setup
 
-0 0 * * * /home/ubuntu/.local/bin/ubs --update --quiet --non-interactive >/dev/null 2>&1 # Ultimate Bug Scanner Auto-Update
-*/30 * * * * /home/ubuntu/.local/bin/cass index --json >/dev/null 2>&1 # Auto-index cass sessions
+# Update Ultimate Bug Scanner daily at midnight
+0 0 * * * __HOME__/.local/bin/ubs --update --quiet --non-interactive >/dev/null 2>&1
+
+# Auto-index cass sessions every 30 minutes
+*/30 * * * * __HOME__/.local/bin/cass index --json >/dev/null 2>&1

@@ -13,3 +13,7 @@ Thumbs.db
 *.env
 *.env.local
 secrets/
+
+# Generated files (regenerated per-machine)
+claude/hooks/skill-router/skill-rules.json
+.ruff_cache/

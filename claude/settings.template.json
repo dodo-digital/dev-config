@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/ubuntu/.claude/hooks/skill-router/skill-router.sh"
+            "command": "__HOME__/.claude/hooks/skill-router/skill-router.sh"
           }
         ]
       }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/ubuntu/.claude/hooks/git_safety_guard.py"
+            "command": "__HOME__/.claude/hooks/git_safety_guard.py"
           }
         ]
       }
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/ubuntu/.claude/hooks/on-file-write.sh"
+            "command": "__HOME__/.claude/hooks/on-file-write.sh"
           }
         ]
       }
@@ -39,27 +39,14 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/home/ubuntu/.claude/hooks/cass-index-on-exit.sh"
+            "command": "__HOME__/.claude/hooks/cass-index-on-exit.sh"
           }
         ]
       }
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "/home/ubuntu/.claude/statusline-command.sh"
-  },
   "enabledPlugins": {
     "compound-engineering@every-marketplace": true,
     "agent-pipelines@dodo-digital": true
-  },
-  "mcpServers": {
-    "mcp-agent-mail": {
-      "type": "http",
-      "url": "http://127.0.0.1:8765/mcp/",
-      "headers": {
-        "Authorization": "Bearer YOUR_TOKEN_HERE"
-      }
-    }
   }
 }

@@ -12,7 +12,9 @@ REASON=$(echo "$INPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); pr
 case "$REASON" in
     clear|prompt_input_exit)
         # Run index in background, suppress output
-        nohup /home/ubuntu/.local/bin/cass index --json >/dev/null 2>&1 &
+        if command -v cass >/dev/null 2>&1; then
+            nohup cass index --json >/dev/null 2>&1 &
+        fi
         ;;
 esac
 
