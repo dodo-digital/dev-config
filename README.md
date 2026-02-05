@@ -5,7 +5,21 @@ Batteries-included Claude Code setup for agentic development workflows. One comm
 ## Quick Start
 
 ```bash
-git clone https://github.com/hwells4/dev-config.git ~/Projects/dev-config
+curl -fsSL https://raw.githubusercontent.com/dodo-digital/dev-config/main/setup.sh | bash
+```
+
+With options:
+```bash
+# Skip crontab
+curl -fsSL https://raw.githubusercontent.com/dodo-digital/dev-config/main/setup.sh | bash -s -- --no-cron
+
+# Only install hooks
+curl -fsSL https://raw.githubusercontent.com/dodo-digital/dev-config/main/setup.sh | bash -s -- --hooks-only
+```
+
+Or clone manually:
+```bash
+git clone https://github.com/dodo-digital/dev-config.git ~/Projects/dev-config
 cd ~/Projects/dev-config
 ./install.sh
 ```
